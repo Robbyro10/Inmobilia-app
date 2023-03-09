@@ -4,7 +4,7 @@ import { MemberCard } from "./MemberCard";
 
 export const MemberGrid = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 mx-20">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 max-w-6xl md:w-3/4 mx-auto mb-10">
       {team.map((member) => (
         <MemberCard
           name={member.name}

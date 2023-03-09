@@ -13,7 +13,7 @@ export const Hero = () => {
         />
         <div className="flex flex-col gap-5 absolute w-1/2">
           <h1 className="text-3xl lg:text-6xl">INMOBILIA CARACAS</h1>
-          <h2 className="text-lg lg:text-2xl text-yellow">Acesoria Inmobiliaria</h2>
+          <h2 className="text-lg lg:text-2xl text-yellow">Asesoría Inmobiliaria</h2>
           <p className="hidden md:flex text-sm">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
             corporis blanditiis voluptates dolore corrupti iste natus alias.

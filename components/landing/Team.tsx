@@ -4,10 +4,10 @@ import { FC } from 'react'
 
 export const Team: FC = () => {
   return (
-    <div className='flex gap-14 mb-20 mx-10 flex-wrap justify-center my-20'>
+    <div className='grid grid-cols-3 md:grid-cols-3 gap-4 mb-20 my-14 w-3/4 max-w-screen-lg mx-auto'>
         {
             team.map( member => (
-                <div key={member.name} className="text-white text-center w-48 md:w-1/4">
+                <div key={member.name} className="text-white text-center mb-5">
                     <div className='flex justify-center'>
                         <Image src={member.img} alt={member.name} className="shadow-md" />
                     </div>

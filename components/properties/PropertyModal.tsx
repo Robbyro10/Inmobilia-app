@@ -98,7 +98,7 @@ export const PropertyModal: FC<Props> = ({
   return (
     <div className="fixed inset-0 bg-dark-blue bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
       <div className="bg-blue p-6 rounded-sm w-5/6 lg:w-fit relative">
-          <button onClick={onClose} className="text-white text-2xl text-right border rounded-md p-1 absolute top-0 right-0 my-5 mx-6 hover:bg-white hover:text-blue transition ease-in ">
+          <button onClick={onClose} className="text-yellow text-2xl text-right border rounded-md p-1 absolute top-0 right-0 my-5 mx-6 hover:bg-yellow hover:text-blue transition ease-in ">
            <IoCloseSharp />
           </button>
           <h1 className="text-3xl text-yellow text-center my-5">
@@ -129,7 +129,8 @@ export const PropertyModal: FC<Props> = ({
                   <option value="Apartamento">Apartamento</option>
                   <option value="Casa">Casa</option>
                   <option value="Terreno">Terreno</option>
-                  <option value="Local">Local</option>
+                  <option value="Local / Oficina">Local / Oficina</option>
+                  <option value="Edificio">Edificio</option>
                 </select>
               </div>
             </div>

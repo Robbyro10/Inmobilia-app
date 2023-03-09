@@ -10,6 +10,7 @@ import { AuthContext } from "@/context";
 export const Navbar: FC = () => {
   const [open, setOpen] = useState(true);
   const { user, logoutUser } = useContext(AuthContext);
+  const { asPath } = useRouter();
   const handleLogout = () => {
     logoutUser();
   }
@@ -32,15 +33,15 @@ export const Navbar: FC = () => {
           <div className="flex gap-5">
             <Link
               href="/propiedades"
-              className="hover:text-yellow transition hidden md:flex"
+              className={`hover:text-yellow transition hidden md:flex ${asPath.includes('/propiedades') ? 'text-yellow' : ''}`}
             >
               Propiedades
             </Link>
             <Link
               href="/about"
-              className="hover:text-yellow transition ease-in hidden md:flex"
+              className={`hover:text-yellow transition ease-in hidden md:flex ${asPath.includes('/about') ? 'text-yellow' : ''}`}
             >
-              Quienes Somos
+              Quiénes Somos
             </Link>
             <Link
               href="/#contact"

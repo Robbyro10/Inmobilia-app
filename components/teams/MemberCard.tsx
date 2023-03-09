@@ -14,11 +14,8 @@ export const MemberCard: FC<IMember> = ({
   phone,
 }) => {
   return (
-    <div className="bg-dark-blue flex flex-col items-center m-5 max-w-4xl shadow-md">
-      <div className="flex justify-center">
-        <Image src={img} alt={name} className="drop-shadow-md" />
-      </div>
-
+    <div className="bg-dark-blue flex flex-col md:w-auto items-center m-5 shadow-md">
+      <Image src={img} alt={name} className="drop-shadow-md" />
       <div className="p-5 text-white flex flex-col gap-2">
         <h1 className="text-yellow text-3xl font-semibold">{name}</h1>
         <h2 className="text-2xl mb-2">{title}</h2>

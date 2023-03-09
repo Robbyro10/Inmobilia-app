@@ -47,7 +47,6 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
         email,
         password,
       });
-      console.log('run')
       const { token, user } = data;
       Cookies.set("token", token);
       dispatch({ type: "[Auth] - Login", payload: user });

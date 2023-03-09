@@ -1,35 +1,21 @@
 import { AppLayout } from "@/components/layouts/AppLayout";
-import { MemberGrid } from "@/components/teams";
+import { MemberGrid, OfferingCard } from "@/components/teams";
 
 const AboutPage = () => {
   return (
     <AppLayout
       title="Inmobilia Caracas - Nuestro Equipo"
-      pageDescription="Informacion del equipo de Inmobilia Caracas"
+      pageDescription="Información del equipo de Inmobilia Caracas"
     >
-      <div className=" text-center mt-10 mb-8">
-        <h1 className="text-3xl text-yellow text-center font-semibold mb-2">
+      <div className=" text-center mt-14 mb-8 text-yellow">
+        <h1 className="text-3xl  font-semibold mb-2">
           Conoce a nuestro equipo
         </h1>
-        <p className="text-white">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum ipsam
-          ullam eligendi atque nostrum dolore.
-        </p>
+        <hr className="w-2/3 mx-auto mt-5"/>
       </div>
       <MemberGrid />
-      <div className=" text-center mt-10 mb-8">
-        <h1 className="text-3xl text-yellow text-center font-semibold mb-2">
-          Que ofrecemos
-        </h1>
 
-        <ul className="text-white flex gap-2 flex-col mt-5">
-          <li>- Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, odit.</li>
-          <li>- Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, odit.</li>
-          <li>- Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, odit.</li>
-          <li>- Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, odit.</li>
-          <li>- Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, odit.</li>
-        </ul>
-      </div>
+      <OfferingCard />
     </AppLayout>
   );
 };

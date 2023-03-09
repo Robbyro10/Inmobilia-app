@@ -1,10 +1,11 @@
 import { inmobiliaApi } from "@/api/inmobiliaApi";
+import { AuthContext } from "@/context";
 import { IProperty } from "@/interfaces";
+import { format } from "../../utils"
 import Image from "next/image";
 import Link from "next/link";
 import React, { FC, useContext } from "react";
-import { FaBath, FaCarSide, FaTrash } from "react-icons/fa";
-import { IoIosBed } from "react-icons/io";
+import { FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 interface Props {
@@ -12,7 +13,7 @@ interface Props {
 }
 
 export const PropertyCard: FC<Props> = ({ property }) => {
-  const user = localStorage.getItem("fullName");
+  const { user } = useContext(AuthContext);
 
   const handleDelete = () => {
     Swal.fire({
@@ -43,29 +44,21 @@ export const PropertyCard: FC<Props> = ({ property }) => {
           priority
           className="object-cover h-64"
         />
-        <div className="my-3 text-center">
+        <div className="my-3 mx-5 text-center">
           <h1 className="text-yellow text-2xl capitalize">
             {property.address}
           </h1>
-          <p className="text-white text-sm">{property.size} mts^2</p>
+          <p className="text-white text-lg">{property.description}</p>
         </div>
-        <div className="flex justify-evenly text-white my-5">
-          {property.sale !== 0 && <h2>Venta: {property.sale}$</h2>}
-          {property.rent !== 0 && <h2>Alquiler: {property.rent}$</h2>}
-        </div>
-        <div className="flex justify-evenly items-center text-white text-center mt-8">
-          <div>
-            <FaBath />
-            <h2>{property.bath}</h2>
-          </div>
-          <div>
-            <IoIosBed />
-            <h2>{property.rooms}</h2>
-          </div>
-          <div>
-            <FaCarSide />
-            <h2>{property.parking}</h2>
-          </div>
+        <div className="flex justify-around text-white my-5 text-center">
+          {property.sale !== 0 && (
+            <h2>
+              Venta: <br /> <b className="text-lg">{format(property.sale!)}</b>
+            </h2>
+          )}
+          {property.rent !== 0 && <h2>
+              Alquiler: <br /> <b className="text-lg">{format(property.rent!)}</b>
+            </h2>}
         </div>
       </Link>
       {user && (

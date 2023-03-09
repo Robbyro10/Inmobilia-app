@@ -26,7 +26,10 @@ export const Footer: FC = () => {
             Propiedades
           </Link>
           <Link href="/about" className="hover:text-yellow transition ease-in">
-            Quienes Somos
+            Quiénes Somos
+          </Link>
+          <Link href="/auth/login" className="hover:text-yellow transition ease-in">
+            Iniciar Sesión
           </Link>
         </div>
         <div className="flex flex-col gap-3">
