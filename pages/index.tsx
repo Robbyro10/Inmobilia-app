@@ -17,6 +17,8 @@ export default function Home() {
           <Image
             src={modernHouse}
             alt="modern white house"
+            height={100}
+            width={600}
             className="rounded drop-shadow-md"
           />
         </div>

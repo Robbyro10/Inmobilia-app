@@ -6,9 +6,9 @@ export const Hero = () => {
   return (
     <div className="flex flex-col justify-center items-center relative text-center text-white">
         <Image
+          priority
           src={avila}
           alt="Big white mansion"
-          priority
           className="contrast-75 brightness-50 w-full drop-shadow-md"
         />
         <div className="flex flex-col gap-5 absolute w-1/2">

@@ -9,6 +9,8 @@ export const Contact: FC = () => {
         <Image
           src={cabin}
           alt="dark house"
+          height={400}
+          width={700}
           className="contrast-50 brightness-50 h-full object-cover w-full"
         />
         <div className="absolute mx-auto">

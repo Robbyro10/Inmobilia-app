@@ -33,6 +33,7 @@ export const LandingHouseGrid = () => {
         >
           <Image
             src={house.img}
+            height={500}
             alt="dark house"
             className="group-hover:contrast-50 group-hover:brightness-50 transition ease-in rounded-md shadow-md contrast-100 brightness-100 h-full"
           />

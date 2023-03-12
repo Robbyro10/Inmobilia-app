@@ -32,7 +32,6 @@ export const PropertyCard: FC<Props> = ({ property }) => {
       }
     });
   };
-  console.log(property.rent)
 
   return (
     <div className="bg-dark-blue shadow-md transition ease-in pb-5 ">

@@ -16,6 +16,7 @@ import { FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { inmobiliaApi } from "@/api/inmobiliaApi";
 import { BottomContactBar, ContactBox } from "@/components/teams";
+import Image from "next/image";
 
 interface Props {
   id: string;
@@ -119,7 +120,9 @@ const PropertyPage: NextPage<Props> = ({ id }) => {
                 </button>
               )}
 
-              <img
+              <Image
+                width={400}
+                height={400}
                 key={img}
                 src={img}
                 className="object-cover h-full w-full"

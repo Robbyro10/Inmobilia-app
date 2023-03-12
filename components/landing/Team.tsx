@@ -9,7 +9,7 @@ export const Team: FC = () => {
             team.map( member => (
                 <div key={member.name} className="text-white text-center mb-5">
                     <div className='flex justify-center'>
-                        <Image src={member.img} alt={member.name} className="shadow-md" />
+                        <Image src={member.img} alt={member.name} className="shadow-md" height={300} width={500} />
                     </div>
                     <h1 className='text-2xl text-yellow mt-4'>{member.name}</h1>
                     <p>{member.title}</p>
