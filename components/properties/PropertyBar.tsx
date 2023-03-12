@@ -21,7 +21,7 @@ export const PropertyBar: FC<Props> = ({ property }) => {
         <h2 className="text-yellow text-2xl">Construcción</h2>
         <p>{property.size} mts^2</p>
       </div>
-      {property.terrain !== 0 && (
+      {(property.terrain && property.terrain > 0) && (
         <div className="text-center hidden md:block">
           <h2 className="text-yellow text-2xl">Terreno</h2>
           <p>{property.terrain} mts^2</p>

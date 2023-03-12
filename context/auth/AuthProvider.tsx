@@ -30,7 +30,7 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
     }
 
     try {
-      const { data } = await inmobiliaApi.get("auth/check-auth-status", {
+      const { data } = await inmobiliaApi.get("/auth/check-auth-status", {
         headers: { Authorization: `Bearer ${Cookies.get("token")}` },
       });
       const { token, user } = data;
@@ -43,7 +43,7 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
 
   const loginUser = async (email: string, password: string) => {
     try {
-      const { data } = await inmobiliaApi.post("auth/login", {
+      const { data } = await inmobiliaApi.post("/auth/login", {
         email,
         password,
       });
@@ -62,7 +62,7 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
     password: string
   ): Promise<{ hasError: boolean; message?: string }> => {
     try {
-      const { data } = await inmobiliaApi.post("auth/register", {
+      const { data } = await inmobiliaApi.post("/auth/register", {
         email,
         password,
         name,

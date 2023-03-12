@@ -16,7 +16,6 @@ import { FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { inmobiliaApi } from "@/api/inmobiliaApi";
 import { BottomContactBar, ContactBox } from "@/components/teams";
-import Link from "next/link";
 
 interface Props {
   id: string;
@@ -26,11 +25,7 @@ const PropertyPage: NextPage<Props> = ({ id }) => {
   const { isModalOpen, toggleModal } = useContext(UiContext);
   const { user } = useContext(AuthContext);
 
-  const { data, error, isLoading, isValidating } = useSWR(
-    `http://localhost:3001/api/properties/${id}`,
-    fetcher,
-    { refreshInterval: 1000 }
-  );
+  const { data, error, isLoading } = useSWR(`/properties/${id}`, fetcher, { refreshInterval: 1000 });
 
   const handleDelete = (img: string) => {
     if (data.img.length === 1) {

@@ -32,6 +32,7 @@ export const PropertyCard: FC<Props> = ({ property }) => {
       }
     });
   };
+  console.log(property.rent)
 
   return (
     <div className="bg-dark-blue shadow-md transition ease-in pb-5 ">
@@ -51,12 +52,12 @@ export const PropertyCard: FC<Props> = ({ property }) => {
           <p className="text-white text-lg">{property.description}</p>
         </div>
         <div className="flex justify-around text-white my-5 text-center">
-          {property.sale !== 0 && (
+          {(property.sale && property.sale > 0) && (
             <h2>
               Venta: <br /> <b className="text-lg">{format(property.sale!)}</b>
             </h2>
           )}
-          {property.rent !== 0 && <h2>
+          {(property.rent && property.rent > 0) && <h2>
               Alquiler: <br /> <b className="text-lg">{format(property.rent!)}</b>
             </h2>}
         </div>

@@ -30,13 +30,10 @@ const PropiedadesPage = () => {
     sale: watch("sale"),
   };
 
-  const { data, error, isLoading } = useSWR(
-    "http://localhost:3001/api/properties",
-    fetcher,
-    { refreshInterval: 1000 }
-  );
+  const { data, error, isLoading } = useSWR(`/properties`, fetcher, { refreshInterval: 1000 }); 
 
   if (error) return <div>failed to load</div>;
+
   if (isLoading) return <LoadingSpinner />;
 
   const filteredData = filterData(data, filter);

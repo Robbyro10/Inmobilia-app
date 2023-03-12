@@ -1,2 +1,3 @@
+import { inmobiliaApi } from "@/api/inmobiliaApi";
 
-export const fetcher = (...args) => fetch(...args).then(res => res.json())
+export const fetcher = (url: string) => inmobiliaApi.get(url).then(res => res.data);
