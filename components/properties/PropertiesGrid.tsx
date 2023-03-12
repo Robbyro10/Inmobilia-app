@@ -1,4 +1,4 @@
-import { IProperty, properties } from '@/data/properties'
+import { IProperty } from '@/interfaces'
 import { FC } from 'react'
 import { PropertyCard } from './PropertyCard'
 
