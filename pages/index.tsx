@@ -19,7 +19,7 @@ export default function Home() {
             alt="modern white house"
             height={100}
             width={600}
-            className="rounded drop-shadow-md"
+            className="rounded drop-shadow-md animate__animated animate__fadeIn"
           />
         </div>
         <div className="md:w-1/2 p-5 mx-5">

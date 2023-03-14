@@ -76,12 +76,12 @@ const PropertyPage: NextPage<Props> = ({ id }) => {
               Precio
             </h1>
             <div className="flex flex-col text-xl">
-              {data.sale !== 0 && (
+              {(data.sale || data.sale > 0) && (
                 <p className="text-white mt-5">
                   Venta: <b> {format(data.sale)}</b>
                 </p>
               )}
-              {data.rent !== 0 && (
+              {(data.rent || data.rent > 0) && (
                 <p className="text-white mt-5">
                   Alquiler: <b>{format(data.rent)}</b>{" "}
                 </p>

@@ -4,9 +4,8 @@ import axios from "axios";
 import React, { FC } from "react";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import {IoCloseSharp} from 'react-icons/io5'
+import { IoCloseSharp } from "react-icons/io5";
 import { IProperty } from "@/interfaces";
-
 
 interface Props {
   isOpen: boolean;
@@ -96,21 +95,24 @@ export const PropertyModal: FC<Props> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-dark-blue bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
+    <div className="fixed inset-0 mt-12 bg-dark-blue bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
       <div className="bg-blue p-6 rounded-sm w-5/6 lg:w-fit relative">
-          <button onClick={onClose} className="text-yellow text-2xl text-right border rounded-md p-1 absolute top-0 right-0 my-5 mx-6 hover:bg-yellow hover:text-blue transition ease-in ">
-           <IoCloseSharp />
-          </button>
-          <h1 className="text-3xl text-yellow text-center my-5">
-            {type === "add" ? "Agregar Propiedad" : "Editar Propiedad"}
-          </h1>
+        <button
+          onClick={onClose}
+          className="text-yellow text-2xl text-right border rounded-md p-1 absolute top-0 right-0 my-5 mx-6 hover:bg-yellow hover:text-blue transition ease-in "
+        >
+          <IoCloseSharp />
+        </button>
+        <h1 className="text-3xl text-yellow text-center my-5">
+          {type === "add" ? "Agregar Propiedad" : "Editar Propiedad"}
+        </h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col gap-4">
             <div className="grid grid-cols-2 gap-2">
               <div className="flex flex-col gap-1">
                 <label className="text-yellow text-xl">Zona</label>
                 <input
-                  className="rounded-sm focus:outline-yellow px-2 py-1"
+                  className="rounded-sm focus:outline-yellow px-2 py-1 "
                   type="text"
                   {...register("address", {
                     required: true,
@@ -123,7 +125,7 @@ export const PropertyModal: FC<Props> = ({
               <div className="flex flex-col gap-1">
                 <label className="text-yellow text-xl">Tipo</label>
                 <select
-                  className="focus:outline-yellow px-2 py-1 rounded-sm"
+                  className="focus:outline-yellow px-2 py-1 rounded-sm "
                   {...register("type")}
                 >
                   <option value="Apartamento">Apartamento</option>
@@ -137,7 +139,7 @@ export const PropertyModal: FC<Props> = ({
             <div className="flex flex-col gap-1">
               <label className="text-yellow text-xl">Descripción</label>
               <input
-                className="rounded-sm focus:outline-yellow px-2 py-1"
+                className="rounded-sm focus:outline-yellow px-2 py-1 "
                 type="text"
                 {...register("description", {
                   required: true,
@@ -152,7 +154,7 @@ export const PropertyModal: FC<Props> = ({
                 <div className="flex flex-col gap-1">
                   <label className="text-yellow text-xl">Venta</label>
                   <input
-                    className="rounded-sm focus:outline-yellow px-2 py-1"
+                    className="rounded-sm focus:outline-yellow px-2 py-1 "
                     type="number"
                     {...register("sale")}
                   />
@@ -160,7 +162,7 @@ export const PropertyModal: FC<Props> = ({
                 <div className="flex flex-col gap-1 mt-2">
                   <label className="text-yellow text-xl">Alquiler</label>
                   <input
-                    className="rounded-sm focus:outline-yellow px-2 py-1"
+                    className="rounded-sm focus:outline-yellow px-2 py-1 "
                     type="number"
                     {...register("rent")}
                   />
@@ -170,7 +172,7 @@ export const PropertyModal: FC<Props> = ({
                 <div className="flex flex-col gap-1">
                   <label className="text-yellow text-xl">Contrucción</label>
                   <input
-                    className="rounded-sm focus:outline-yellow px-2 py-1"
+                    className="rounded-sm focus:outline-yellow px-2 py-1 "
                     type="number"
                     {...register("size")}
                   />
@@ -178,7 +180,7 @@ export const PropertyModal: FC<Props> = ({
                 <div className="flex flex-col gap-1 mt-2">
                   <label className="text-yellow text-xl">Terreno</label>
                   <input
-                    className="rounded-sm focus:outline-yellow px-2 py-1"
+                    className="rounded-sm focus:outline-yellow px-2 py-1 "
                     type="number"
                     {...register("terrain")}
                   />
@@ -189,7 +191,7 @@ export const PropertyModal: FC<Props> = ({
               <div className="flex flex-col gap-1">
                 <label className="text-yellow text-xl">Baños</label>
                 <input
-                  className="rounded-sm focus:outline-yellow px-2 py-1"
+                  className="rounded-sm focus:outline-yellow px-2 py-1 "
                   type="number"
                   {...register("bath", {
                     required: true,
@@ -203,7 +205,7 @@ export const PropertyModal: FC<Props> = ({
               <div className="flex flex-col gap-1">
                 <label className="text-yellow text-xl">Cuartos</label>
                 <input
-                  className="rounded-sm focus:outline-yellow px-2 py-1"
+                  className="rounded-sm focus:outline-yellow px-2 py-1 "
                   type="number"
                   {...register("rooms", {
                     required: true,
@@ -217,7 +219,7 @@ export const PropertyModal: FC<Props> = ({
               <div className="flex flex-col gap-1">
                 <label className="text-yellow text-xl">Puestos</label>
                 <input
-                  className="rounded-sm focus:outline-yellow px-2 py-1"
+                  className="rounded-sm focus:outline-yellow px-2 py-1 "
                   type="number"
                   {...register("parking", {
                     required: true,
@@ -232,7 +234,7 @@ export const PropertyModal: FC<Props> = ({
             <div className="flex flex-col gap-1">
               <label className="text-yellow text-xl">Agregados</label>
               <textarea
-                className="rounded-sm focus:outline-yellow px-2 py-1"
+                className="rounded-sm focus:outline-yellow px-2 py-1 "
                 {...register("addOns")}
               />
             </div>

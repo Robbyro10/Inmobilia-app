@@ -30,11 +30,14 @@ const PropiedadesPage = () => {
     sale: watch("sale"),
   };
 
-  const { data, error, isLoading } = useSWR(`/properties`, fetcher, { refreshInterval: 1000 }); 
-
-  if (error) return <div>failed to load</div>;
-
+  const { data, error, isLoading } = useSWR(`/properties`, fetcher, { refreshInterval: 1000 });
+  
+  
+  if (error) return <h1 className="top-1/2 right-1/2 absolute text-white">Error</h1>;
+  
   if (isLoading) return <LoadingSpinner />;
+  
+  if (data.length === 0) return <h1 className="inset-0 absolute text-white">No hay propiedades</h1>;
 
   const filteredData = filterData(data, filter);
 

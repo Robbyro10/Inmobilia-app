@@ -21,22 +21,22 @@ export const Carousel: FC<Props> = ({ images }) => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full relative">
       <Image
         width={500}
         height={500}
         src={images[currentIndex]}
         alt={images[currentIndex]}
-        className="h-[400px] md:h-[700px] lg:h-[940px] w-full bg-center object-cover blur-md absolute"
+        className="h-[400px] md:h-full w-full bg-center object-cover blur-md absolute"
       />
-      <div className="max-w-screen-xl h-1/2 w-full m-auto relative group">
+      <div className="max-w-screen-xl w-full m-auto relative group">
         <Image
           width={1280}
           height={1000}
           priority
           src={images[currentIndex]}
           alt={images[currentIndex]}
-          className="h-[450px] md:h-[700px] lg:h-[940px] w-full bg-center object-cover"
+          className="h-[450px] md:h-full max-h-screen w-full bg-center object-cover"
         />
         {/* Left Arrow */}
         <button

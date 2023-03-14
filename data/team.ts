@@ -1,6 +1,7 @@
 import { StaticImageData } from "next/image";
 import ana from "../public/team/anaFront.png";
 import isabel from "../public/team/isabelCaleya.jpg";
+import gaby from "../public/team/gaby.jpeg";
 
 export interface IMember {
   id: number;
@@ -39,7 +40,7 @@ export const team: IMember[] = [
     name: "Gaby Prato",
     title: "Asesor junior",
     desc: "Comunicadora Social egresada de la Universidad Católica Andrés Bello. Especializada en el área de Relaciones Públicas y Comunicaciones. Apasionada de la lectura, de la escritura y de la comunicación.",
-    img: ana,
+    img: gaby,
     email: "prato.mari@gmail.com",
     instagram: "",
     phone: "+58 412-6203528",

@@ -14,7 +14,6 @@ const LoginPage: NextPage = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
@@ -39,7 +38,7 @@ const LoginPage: NextPage = () => {
           <div className="flex flex-col gap-1">
             <label className="text-xl">Correo</label>
             <input
-              className="rounded-sm px-3 py-2 bg-gray"
+              className="rounded-sm px-3 py-2 bg-gray focus:outline-yellow"
               type="email"
               {...register("email", {
                 required: true,
@@ -52,7 +51,7 @@ const LoginPage: NextPage = () => {
           <div className="flex flex-col gap-1 mt-5">
             <label className="text-xl">Contraseña</label>
             <input
-              className="rounded-sm bg-gray px-3 py-2"
+              className="rounded-sm bg-gray px-3 py-2 focus:outline-yellow"
               type="password"
               {...register("password", {
                 required: true,
@@ -71,7 +70,7 @@ const LoginPage: NextPage = () => {
         </form>
         <div className="text-center mt-5">
           <Link href="/" className="hover:underline">
-            Volver a home
+            Volver
           </Link>
         </div>
       </div>
