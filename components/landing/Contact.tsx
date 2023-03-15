@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FC } from "react";
-import cabin from "../../public/properties/cabin.jpg";
+import cabin from "../../public/properties/white-mansion.jpg";
 import { Socials } from "../ui";
 
 export const Contact: FC = () => {
@@ -9,8 +9,7 @@ export const Contact: FC = () => {
         <Image
           src={cabin}
           alt="dark house"
-          height={400}
-          width={700}
+          sizes="100vw"
           className="contrast-50 brightness-50 h-full object-cover w-full"
         />
         <div className="absolute mx-auto">

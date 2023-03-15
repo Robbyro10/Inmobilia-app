@@ -11,7 +11,7 @@ const AboutPage = () => {
         <h1 className="text-3xl  font-semibold mb-2">
           Conoce a nuestro equipo
         </h1>
-        <hr className="w-2/3 mx-auto mt-5"/>
+        <hr className="w-2/3 mx-auto mt-5" />
       </div>
       <MemberGrid />
 

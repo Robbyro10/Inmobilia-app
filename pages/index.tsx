@@ -2,6 +2,7 @@ import { AppLayout } from "@/components/layouts/AppLayout";
 import { Button } from "@/components/ui";
 import Image from "next/image";
 import modernHouse from "../public/properties/modern-house.jpg";
+import logo from "../public/logoSinfondo.png";
 import { Contact, Hero, LandingHouseGrid, Team } from "@/components/landing";
 
 export default function Home() {
@@ -12,8 +13,8 @@ export default function Home() {
     >
       <Hero />
 
-      <div className="flex flex-col md:flex-row max-w-screen-xl justify-center items-center my-5 mx-auto py-5">
-        <div className="md:w-1/2 p-2 mx-5">
+      <div className="flex flex-col md:flex-row px-5 max-w-screen-xl justify-center items-center my-5 mx-auto py-5">
+        <div className="md:w-1/2 p-2 mx-5 basis-1/2">
           <Image
             src={modernHouse}
             alt="modern white house"
@@ -22,19 +23,46 @@ export default function Home() {
             className="rounded drop-shadow-md animate__animated animate__fadeIn"
           />
         </div>
-        <div className="md:w-1/2 p-5 mx-5">
+        <div className="md:w-1/2 p-5 mx-5 basis-1/2">
           <h1 className="text-yellow text-xl md:text-3xl mb-5 font-semibold">
-            El mejor catálogo de Propiedades en Caracas
+            Nuestro Catalogo de Propiedades
           </h1>
           <h2 className="text-white mb-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-            rerum, corrupti at hic quidem eveniet laboriosam inventore tempore
-            eum, est, exercitationem odio sed! Numquam harum et repudiandae
-            odit, incidunt tempora.
+            Disponemos de un catálogo de propiedades variado y exclusivo en un solo lugar. Desde casas hasta terrenos, tenemos una gran variedad de
+            inmuebles para ti. Visita nuestra gran lista y contáctanos para visitas.
           </h2>
           <div className="text-sm">
             <Button text="Ver Propiedades" href="propiedades" />
           </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col md:flex-row px-5 max-w-screen-xl justify-center items-center my-5 mx-auto py-5">
+        <div className="md:w-1/2 p-5 mx-5 basis-2/3">
+          <h1 className="text-yellow text-xl md:text-3xl mb-5 font-semibold">
+            La Mejor Asesoria Inmobiliaria
+          </h1>
+          <h2 className="text-white mb-5">
+            Muchas veces la compra de una propiedad representa el patrimonio
+            familiar o un activo para salvaguardar el capital trabajado a lo
+            largo de una vida. También, representa calidad de vida y el logro de
+            un sueño. En Inmobilia Caracas ayudamos a nuestros clientes a la
+            mejor toma de decisiones, brindamos soluciones, ofreciendo una
+            amplia cartera de propiedades. Nuestros pilares son comunicación,
+            profesionalismo y confianza.
+          </h2>
+          <div className="text-sm">
+            <Button text="Quiénes Somos" href="about" />
+          </div>
+        </div>
+        <div className="md:w-1/4 p-2 mx-5 basis-1/3">
+          <Image
+            src={logo}
+            alt="Inmobilia Caracas Logo"
+            height={100}
+            width={600}
+            className="rounded drop-shadow-md animate__animated animate__fadeIn hidden md:block"
+          />
         </div>
       </div>
 
