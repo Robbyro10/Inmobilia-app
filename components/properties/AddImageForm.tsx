@@ -46,7 +46,7 @@ export const AddImageForm: FC<Props> = ({property}) => {
         accept="image/*"
         {...register("img")}
       />
-      <button type="submit" disabled={isLoading || !image || image.length === 0} className="bg-yellow py-3 rounded px-4 mx-2 disabled:bg-dark-yellow">Enviar</button>
+      <button type="submit" disabled={isLoading || !image || image.length === 0} className="bg-yellow py-3 rounded px-4 m-2 disabled:bg-dark-yellow">Enviar</button>
     </form>
   );
 };

@@ -4,23 +4,21 @@ import { Button } from "../ui";
 
 export const Hero = () => {
   return (
-    <div className="flex flex-col justify-center items-center text-center text-white max-h-screen h-[400px] md:h-auto mb-10">
+    <div className="text-white text-center flex flex-col items-center justify-center relative h-screen w-screen">
       <Image
-        priority
         src={avila}
-        alt="Big white mansion"
-        className="contrast-75 brightness-50 w-full object-cover drop-shadow-md"
+        priority
+        alt="Big image of cerro avila"
+        sizes="100vw"
+        className="contrast-50 brightness-50 h-full object-cover w-full"
       />
-      <div className="flex flex-col gap-5 absolute w-1/2">
+      <div className="flex flex-col gap-5 absolute mx-auto">
         <h1 className="text-3xl lg:text-6xl animate__animated animate__fadeInDown">
           INMOBILIA CARACAS
         </h1>
-        <h2 className="text-lg lg:text-2xl text-yellow mt-2">
+        <h2 className="text-lg lg:text-2xl mb-3 text-yellow">
           Asesoría Inmobiliaria
         </h2>
-        <p className="hidden md:flex text-sm mx-auto">
-        {/* Comunicacion, profesionalismo y confianza  */}
-        </p>
         <div>
           <Button text="Ver Propiedades" href="propiedades" />
         </div>

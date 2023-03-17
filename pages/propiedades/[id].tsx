@@ -7,6 +7,7 @@ import {
   AddImageForm,
   Carousel,
   PropertyBar,
+  PropertyGallery,
   PropertyModal,
 } from "@/components/properties";
 import { useContext } from "react";
@@ -26,30 +27,9 @@ const PropertyPage: NextPage<Props> = ({ id }) => {
   const { isModalOpen, toggleModal } = useContext(UiContext);
   const { user } = useContext(AuthContext);
 
-  const { data, error, isLoading } = useSWR(`/properties/${id}`, fetcher, { refreshInterval: 1000 });
-
-  const handleDelete = (img: string) => {
-    if (data.img.length === 1) {
-      Swal.fire("Error", "Toda propiedad debe tener una imagen.", "error");
-      return;
-    }
-    Swal.fire({
-      title: "¿Seguro?",
-      text: "Esta acción no se puede revertir.",
-      icon: "warning",
-      iconColor: "#D4BA70",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Borrar Imagen",
-      cancelButtonText: "Cancelar",
-    }).then((result: any) => {
-      if (result.isConfirmed) {
-        const newImageArray = data.img.filter((image: string) => image !== img);
-        inmobiliaApi.patch(`properties/${id}`, { img: newImageArray });
-      }
-    });
-  };
+  const { data, error, isLoading } = useSWR(`/properties/${id}`, fetcher, {
+    refreshInterval: 1000,
+  });
 
   if (error) return <div>failed to load</div>;
   if (isLoading) return <LoadingSpinner />;
@@ -64,18 +44,18 @@ const PropertyPage: NextPage<Props> = ({ id }) => {
       <PropertyBar property={data} />
 
       <div className="flex flex-col md:flex-row justify-around items-center gap-5 w-full max-w-6xl m-auto">
-        <div className="">
+        <div className="basis-2/3">
           <div className="m-5">
             <h1 className="text-yellow text-xl md:text-3xl font-semibold">
               Descripción
             </h1>
-            <p className="text-white text-xl mt-5">{data.description}</p>
+            <p className="text-white mt-5">{data.description}</p>
           </div>
           <div className="m-5">
             <h1 className="text-yellow text-xl md:text-3xl font-semibold">
               Precio
             </h1>
-            <div className="flex flex-col text-xl">
+            <div className="flex flex-col md:text-xl">
               {(data.sale || data.sale > 0) && (
                 <p className="text-white mt-5">
                   Venta: <b> {format(data.sale)}</b>
@@ -92,7 +72,7 @@ const PropertyPage: NextPage<Props> = ({ id }) => {
             <h1 className="text-yellow text-xl md:text-3xl font-semibold">
               Agregados
             </h1>
-            <p className="text-white mt-5">{data.addOns}</p>
+            <p className="text-white mt-5 whitespace-pre-line">{data.addOns}</p>
           </div>
         </div>
         {/* In big screens */}
@@ -108,29 +88,7 @@ const PropertyPage: NextPage<Props> = ({ id }) => {
           <hr className="text-yellow w-1/2 mb-8" />
           {user && <AddImageForm property={data} />}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 justify-center mt-5 m-auto max-w-screen-xl">
-          {data.img!.map((img: string) => (
-            <div className="relative" key={img}>
-              {user && (
-                <button
-                  onClick={() => handleDelete(img)}
-                  className="text-white right-0 m-2 absolute transition ease-in border hover:border-white hover:bg-white hover:text-blue p-3 rounded text-sm"
-                >
-                  <FaTrash />
-                </button>
-              )}
-
-              <Image
-                width={400}
-                height={400}
-                key={img}
-                src={img}
-                className="object-cover h-full w-full"
-                alt={data.description}
-              />
-            </div>
-          ))}
-        </div>
+        <PropertyGallery user={user} images={data.img} id={id} />
       </div>
       {user && (
         <Fab>

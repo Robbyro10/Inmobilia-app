@@ -1,12 +1,13 @@
 import { inmobiliaApi } from "@/api/inmobiliaApi";
 import { AuthContext } from "@/context";
 import { IProperty } from "@/interfaces";
-import { format } from "../../utils"
+import { format } from "../../utils";
 import Image from "next/image";
 import Link from "next/link";
 import React, { FC, useContext } from "react";
-import { FaTrash } from "react-icons/fa";
+import { FaBath, FaCarSide, FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { IoIosBed } from "react-icons/io";
 
 interface Props {
   property: IProperty;
@@ -34,7 +35,7 @@ export const PropertyCard: FC<Props> = ({ property }) => {
   };
 
   return (
-    <div className="bg-dark-blue shadow-md transition ease-in pb-5 ">
+    <div className="bg-dark-blue shadow-md transition ease-in pb-5 relative">
       <Link href={`/propiedades/${property._id}`}>
         <Image
           src={property.img![0]}
@@ -44,25 +45,46 @@ export const PropertyCard: FC<Props> = ({ property }) => {
           priority
           className="object-cover h-64"
         />
-        <div className="my-3 mx-5 text-center">
-          <h1 className="text-yellow text-2xl capitalize">
+        <div className="mx-5 mt-5 mb-8 text-center ">
+          <h1 className="text-yellow text-2xl capitalize mb-2">
             {property.address}
           </h1>
-          <p className="text-white text-lg">{property.description}</p>
+          <p className="text-white text-lg line-clamp-3 h-20">{property.description}</p>
         </div>
-        <div className="flex justify-around text-white my-5 text-center">
-          {(property.sale && property.sale > 0) && (
-            <h2>
-              Venta: <br /> <b className="text-lg">{format(property.sale!)}</b>
-            </h2>
-          )}
-          {(property.rent && property.rent > 0) && <h2>
-              Alquiler: <br /> <b className="text-lg">{format(property.rent!)}</b>
-            </h2>}
+        <div className="flex flex-col gap-5 my-5 text-white text-center">
+          <div className="flex justify-evenly items-center   text-xl">
+            <div>
+              <FaBath className="text-yellow" />
+              <h2>{property.bath}</h2>
+            </div>
+            <div>
+              <IoIosBed className="text-yellow" />
+              <h2>{property.rooms}</h2>
+            </div>
+            <div>
+              <FaCarSide className="text-yellow" />
+              <h2>{property.parking}</h2>
+            </div>
+          </div>
+
+          <div className="flex justify-around">
+            {property.sale !== undefined && property.sale > 0 && (
+              <h2>
+                Venta: <br />{" "}
+                <b className="text-lg">{format(property.sale!)}</b>
+              </h2>
+            )}
+            {property.rent !== undefined && property.rent > 0 && (
+              <h2>
+                Alquiler: <br />{" "}
+                <b className="text-lg">{format(property.rent!)}</b>
+              </h2>
+            )}
+          </div>
         </div>
       </Link>
       {user && (
-        <div className="flex justify-center gap-5 mt-7 mb-2">
+        <div className="flex justify-center gap-5 absolute right-2 top-2">
           <button
             onClick={handleDelete}
             className="text-white px-3 py-2 border rounded-md transition ease-in hover:bg-error hover:text-white hover:border-error"

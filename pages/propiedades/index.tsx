@@ -12,7 +12,6 @@ import { AiOutlinePlus } from "react-icons/ai";
 import useSWR from "swr";
 import { useForm } from "react-hook-form";
 import { filterData } from "@/utils/";
-import Image from "next/image";
 
 const PropiedadesPage = () => {
   const { isModalOpen, toggleModal } = useContext(UiContext);
@@ -30,16 +29,19 @@ const PropiedadesPage = () => {
     sale: watch("sale"),
   };
 
-  const { data, error, isLoading } = useSWR(`/properties`, fetcher, { refreshInterval: 1000 });
-  
-  
-  if (error) return <h1 className="top-1/2 right-1/2 absolute text-white">Error</h1>;
-  
-  if (isLoading) return <LoadingSpinner />;
-  
-  if (data.length === 0) return <h1 className="inset-0 absolute text-white">No hay propiedades</h1>;
+  const { data, error, isLoading } = useSWR(`/properties`, fetcher, {
+    refreshInterval: 1000,
+  });
 
-  const filteredData = filterData(data, filter);
+  if (error)
+    return <h1 className="top-1/2 right-1/2 absolute text-white">Error</h1>;
+
+  if (isLoading) return <LoadingSpinner />;
+
+  if (data.length === 0)
+    return <h1 className="inset-0 absolute text-white">No hay propiedades</h1>;
+
+  let filteredData = filterData(data, filter);
 
   return (
     <AppLayout
@@ -77,7 +79,7 @@ const PropiedadesPage = () => {
       <div className="flex justify-center">
         <div className="mx-5 max-w-7xl">
           {filteredData.length === 0 ? (
-            <PropertiesGrid properties={data} />
+              <PropertiesGrid properties={data} />
           ) : (
             <PropertiesGrid properties={filteredData} />
           )}
