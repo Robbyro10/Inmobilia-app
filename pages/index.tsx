@@ -25,7 +25,7 @@ export default function Home() {
         </div>
         <div className="md:w-1/2 p-5 mx-5 basis-1/2">
           <h1 className="text-yellow text-xl md:text-3xl mb-5 font-semibold">
-            Nuestro Catalogo de Propiedades
+            Nuestro Catálogo de Propiedades
           </h1>
           <h2 className="text-white mb-5">
             Disponemos de un catálogo de propiedades variado y exclusivo en un solo lugar. Desde casas hasta terrenos, tenemos una gran variedad de
@@ -40,7 +40,7 @@ export default function Home() {
       <div className="flex flex-col md:flex-row px-5 max-w-screen-xl justify-center items-center my-5 mx-auto py-5">
         <div className="md:w-1/2 p-5 mx-5 basis-2/3">
           <h1 className="text-yellow text-xl md:text-3xl mb-5 font-semibold">
-            La Mejor Asesoria Inmobiliaria
+            La Mejor Asesoría Inmobiliaria
           </h1>
           <h2 className="text-white mb-5">
             Muchas veces la compra de una propiedad representa el patrimonio

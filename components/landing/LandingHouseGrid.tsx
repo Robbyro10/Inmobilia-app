@@ -1,8 +1,8 @@
 import Image from "next/image";
 import cabin from "../../public/properties/cabin.jpg";
-import colonial from "../../public/properties/colonial.jpg";
-import whiteMansion from "../../public/properties/white-mansion.jpg";
-import modernHouse from "../../public/properties/modern-house.jpg";
+import chorros from "../../public/properties/losChorros.jpg";
+import country from "../../public/properties/country.jpg";
+import valleArriba from "../../public/properties/valleArriba.jpg";
 
 const houses = [
   {
@@ -10,16 +10,16 @@ const houses = [
     img: cabin,
   },
   {
-    name: "La Lagunita",
-    img: colonial,
+    name: "Los Chorros",
+    img: chorros,
   },
   {
-    name: "El Country",
-    img: whiteMansion,
+    name: "Country Club",
+    img: country,
   },
   {
-    name: "Los Palos Grandes",
-    img: modernHouse,
+    name: "Valle Arriba",
+    img: valleArriba,
   },
 ];
 
