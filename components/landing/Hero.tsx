@@ -16,10 +16,11 @@ export const Hero = () => {
         <h1 className="text-3xl lg:text-6xl animate__animated animate__fadeInDown">
           INMOBILIA CARACAS
         </h1>
-        <h2 className="text-lg lg:text-2xl mb-3 text-yellow">
+        <h2 className="text-lg lg:text-3xl text-yellow">
           Asesoría Inmobiliaria
         </h2>
-        <div>
+        <p className="text-lg lg:text-3xl text-yellow">Compra y alquiler de propiedades en la ciudad de Caracas</p>
+        <div className="text-xl">
           <Button text="Ver Propiedades" href="propiedades" />
         </div>
       </div>

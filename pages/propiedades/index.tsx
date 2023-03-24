@@ -49,7 +49,7 @@ const PropiedadesPage = () => {
       pageDescription="Lista de propiedades disponibles"
     >
       <PropertyHeader user={user?.fullName} />
-      <form className="flex justify-center gap-10 bg-dark-blue py-3 mb-5 ">
+      <form className="flex justify-center gap-5 bg-dark-blue py-3 mb-5 ">
         <input
           type="text"
           className="h-fit px-3 py-1 rounded-md shadow-md focus:outline-none hidden md:block bg-blue text-white"

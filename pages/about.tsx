@@ -15,7 +15,7 @@ const AboutPage = () => {
       </div>
       <MemberGrid />
 
-      <OfferingCard />
+      {/* <OfferingCard /> */}
     </AppLayout>
   );
 };

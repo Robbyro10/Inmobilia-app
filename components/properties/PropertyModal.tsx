@@ -99,18 +99,18 @@ export const PropertyModal: FC<Props> = ({
       <div className="bg-blue p-6 rounded-sm w-5/6 lg:w-fit relative">
         <button
           onClick={onClose}
-          className="text-yellow text-2xl text-right border rounded-md p-1 absolute top-0 right-0 my-5 mx-6 hover:bg-yellow hover:text-blue transition ease-in "
+          className="text-yellow text-right border rounded-md p-1 absolute top-0 right-0 my-5 mx-6 hover:bg-yellow hover:text-blue transition ease-in "
         >
           <IoCloseSharp />
         </button>
-        <h1 className="text-3xl text-yellow text-center my-5">
+        <h1 className="text-2xl text-yellow text-center my-5">
           {type === "add" ? "Agregar Propiedad" : "Editar Propiedad"}
         </h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col gap-4">
             <div className="grid grid-cols-2 gap-2">
               <div className="flex flex-col gap-1">
-                <label className="text-yellow text-xl">Zona</label>
+                <label className="text-yellow">Zona</label>
                 <input
                   className="rounded-sm focus:outline-yellow px-2 py-1 "
                   type="text"
@@ -123,7 +123,7 @@ export const PropertyModal: FC<Props> = ({
                 )}
               </div>
               <div className="flex flex-col gap-1">
-                <label className="text-yellow text-xl">Tipo</label>
+                <label className="text-yellow">Tipo</label>
                 <select
                   className="focus:outline-yellow px-2 py-1 rounded-sm "
                   {...register("type")}
@@ -137,7 +137,7 @@ export const PropertyModal: FC<Props> = ({
               </div>
             </div>
             <div className="flex flex-col gap-1">
-              <label className="text-yellow text-xl">Descripción</label>
+              <label className="text-yellow">Descripción</label>
               <input
                 className="rounded-sm focus:outline-yellow px-2 py-1 "
                 type="text"
@@ -152,7 +152,7 @@ export const PropertyModal: FC<Props> = ({
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <div className="flex flex-col gap-1">
-                  <label className="text-yellow text-xl">Venta</label>
+                  <label className="text-yellow">Venta</label>
                   <input
                     className="rounded-sm focus:outline-yellow px-2 py-1 "
                     type="number"
@@ -160,7 +160,7 @@ export const PropertyModal: FC<Props> = ({
                   />
                 </div>
                 <div className="flex flex-col gap-1 mt-2">
-                  <label className="text-yellow text-xl">Alquiler</label>
+                  <label className="text-yellow">Alquiler</label>
                   <input
                     className="rounded-sm focus:outline-yellow px-2 py-1 "
                     type="number"
@@ -170,7 +170,7 @@ export const PropertyModal: FC<Props> = ({
               </div>
               <div>
                 <div className="flex flex-col gap-1">
-                  <label className="text-yellow text-xl">Contrucción</label>
+                  <label className="text-yellow">Contrucción</label>
                   <input
                     className="rounded-sm focus:outline-yellow px-2 py-1 "
                     type="number"
@@ -178,7 +178,7 @@ export const PropertyModal: FC<Props> = ({
                   />
                 </div>
                 <div className="flex flex-col gap-1 mt-2">
-                  <label className="text-yellow text-xl">Terreno</label>
+                  <label className="text-yellow">Terreno</label>
                   <input
                     className="rounded-sm focus:outline-yellow px-2 py-1 "
                     type="number"
@@ -189,7 +189,7 @@ export const PropertyModal: FC<Props> = ({
             </div>
             <div className="grid grid-cols-3 gap-2">
               <div className="flex flex-col gap-1">
-                <label className="text-yellow text-xl">Baños</label>
+                <label className="text-yellow">Baños</label>
                 <input
                   className="rounded-sm focus:outline-yellow px-2 py-1 "
                   type="number"
@@ -203,7 +203,7 @@ export const PropertyModal: FC<Props> = ({
                 )}
               </div>
               <div className="flex flex-col gap-1">
-                <label className="text-yellow text-xl">Cuartos</label>
+                <label className="text-yellow">Cuartos</label>
                 <input
                   className="rounded-sm focus:outline-yellow px-2 py-1 "
                   type="number"
@@ -217,7 +217,7 @@ export const PropertyModal: FC<Props> = ({
                 )}
               </div>
               <div className="flex flex-col gap-1">
-                <label className="text-yellow text-xl">Puestos</label>
+                <label className="text-yellow">Puestos</label>
                 <input
                   className="rounded-sm focus:outline-yellow px-2 py-1 "
                   type="number"
@@ -232,18 +232,18 @@ export const PropertyModal: FC<Props> = ({
               </div>
             </div>
             <div className="flex flex-col gap-1">
-              <label className="text-yellow text-xl">Agregados</label>
+              <label className="text-yellow">Agregados</label>
               <textarea
                 className="rounded-sm focus:outline-yellow px-2 py-1 "
                 {...register("addOns")}
               />
             </div>
             <div className="flex flex-col gap-1">
-              <label className="text-yellow text-xl">
+              <label className="text-yellow">
                 {type === "add" ? "Imágen" : "Cambiar Imágen principal"}
               </label>
               <input
-                className="file:bg-yellow w-fit mt-2 file:hover:bg-dark-yellow p-1 file:rounded file:border-none file:px-3 file:py-2 file:mr-5 bg-white rounded"
+                className="file:bg-yellow w-full md:w-fit mt-2 file:hover:bg-dark-yellow p-1 file:rounded file:border-none file:px-3 file:py-2 file:mr-5 bg-white rounded"
                 type="file"
                 accept="image/*"
                 {...register("img", {
@@ -257,7 +257,7 @@ export const PropertyModal: FC<Props> = ({
           </div>
           <button
             type="submit"
-            className="bg-yellow transition ease-in py-1 rounded-sm w-full mt-4 hover:bg-dark-yellow text-white text-xl"
+            className="bg-yellow transition ease-in py-1 rounded-sm w-full mt-4 hover:bg-dark-yellow text-white"
           >
             Enviar
           </button>

@@ -1,18 +1,18 @@
 import { AuthProvider, UiProvider } from "@/context";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import { EB_Garamond } from "next/font/google";
+import { EB_Garamond, Poppins, Roboto } from "next/font/google";
 
-const garamond = EB_Garamond({
+const customFont = Poppins({
   subsets: ["latin"],
-  weight: ["600", "400", "500", "700"],
+  weight: [ "400", "500", "600", "700"],
 });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <AuthProvider>
       <UiProvider>
-        <main className={garamond.className}>
+        <main className={customFont.className}>
           <Component {...pageProps} />
         </main>
       </UiProvider>

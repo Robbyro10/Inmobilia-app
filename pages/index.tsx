@@ -4,6 +4,7 @@ import Image from "next/image";
 import modernHouse from "../public/properties/modern-house.jpg";
 import logo from "../public/logoSinfondo.png";
 import { Contact, Hero, LandingHouseGrid, Team } from "@/components/landing";
+import { OfferingCard } from "@/components/teams";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
     >
       <Hero />
 
+          <OfferingCard />
       <div className="flex flex-col md:flex-row px-5 max-w-screen-xl justify-center items-center my-5 mx-auto py-5">
         <div className="md:w-1/2 p-2 mx-5 basis-1/2">
           <Image
@@ -29,7 +31,7 @@ export default function Home() {
           </h1>
           <h2 className="text-white mb-5">
             Disponemos de un catálogo de propiedades variado y exclusivo en un solo lugar. Desde casas hasta terrenos, tenemos una gran variedad de
-            inmuebles para ti. Visita nuestra gran lista y contáctanos para visitas.
+            inmuebles para ti. Visita nuestra lista de propiedades y contáctanos para visitas.
           </h2>
           <div className="text-sm">
             <Button text="Ver Propiedades" href="propiedades" />

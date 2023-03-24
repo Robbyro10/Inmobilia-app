@@ -38,7 +38,7 @@ export const team: IMember[] = [
   {
     id: 3,
     name: "Gaby Prato",
-    title: "Asesor junior",
+    title: "Asesor",
     desc: "Comunicadora Social egresada de la Universidad Católica Andrés Bello. Especializada en el área de Relaciones Públicas y Comunicaciones. Apasionada de la lectura, de la escritura y de la comunicación.",
     img: gaby,
     email: "prato.mari@gmail.com",
