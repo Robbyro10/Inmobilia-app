@@ -10,7 +10,7 @@ interface Props {
 
 export const PropertiesGrid: FC<Props> = ({ properties }) => {
   return (
-    <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2 mb-10'>
+    <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mb-10'>
         {
             properties.map( prop => (
                 <PropertyCard key={prop._id} property={prop} />

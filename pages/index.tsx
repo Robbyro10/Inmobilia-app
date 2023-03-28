@@ -82,8 +82,8 @@ export default function Home() {
           Nuestro Equipo
         </h1>
         <hr className="text-yellow w-2/3 mx-auto max-w-screen-lg" />
-      </div>
       <Team />
+      </div>
 
       <Contact />
     </AppLayout>

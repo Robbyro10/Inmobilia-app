@@ -8,6 +8,7 @@ import React, { FC, useContext } from "react";
 import { FaBath, FaCarSide, FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { IoIosBed } from "react-icons/io";
+import { RiArrowRightSLine } from "react-icons/ri"
 
 interface Props {
   property: IProperty;
@@ -35,7 +36,7 @@ export const PropertyCard: FC<Props> = ({ property }) => {
   };
 
   return (
-    <div className="bg-dark-blue shadow-md transition ease-in pb-5 relative">
+    <div className="bg-dark-blue shadow-md transition ease-out pb-5 relative hover:-translate-y-1 rounded-md">
       <Link href={`/propiedades/${property._id}`}>
         <Image
           src={property.img![0]}
@@ -43,13 +44,16 @@ export const PropertyCard: FC<Props> = ({ property }) => {
           width={500}
           height={500}
           priority
-          className="object-cover h-64"
+          className="object-cover h-64 rounded-t-md"
         />
         <div className="mx-5 mt-5 mb-8 text-center ">
-          <h1 className="text-yellow text-2xl capitalize mb-2">
-            {property.address}
-          </h1>
-          <p className="text-white text-lg line-clamp-3 h-20">{property.description}</p>
+          <span className="flex gap-1 text-yellow text-2xl capitalize mb-2 justify-center items-center">
+            <h1 className="hover:underline">{property.address}</h1>
+            <RiArrowRightSLine />
+          </span>
+          <p className="text-white text-lg line-clamp-3 h-20">
+            {property.description}
+          </p>
         </div>
         <div className="flex flex-col gap-5 my-5 text-white text-center">
           <div className="flex justify-evenly items-center   text-xl">

@@ -78,7 +78,7 @@ export const Navbar: FC = () => {
             href="/about"
             className="hover:text-yellow transition mt-5 ease-in block md:hidden"
           >
-            Quienes Somos
+            Quiénes Somos
           </Link>
           <Link
             href="/#contact"

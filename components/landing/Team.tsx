@@ -4,7 +4,7 @@ import { FC } from 'react'
 
 export const Team: FC = () => {
   return (
-    <div className='grid grid-cols-3 md:grid-cols-3 gap-4 mb-20 my-14 w-3/4 max-w-screen-lg mx-auto'>
+    <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mb-20 my-14 w-3/4 max-w-screen-lg mx-auto'>
         {
             team.map( member => (
                 <div key={member.name} className="text-white text-center mb-5">
