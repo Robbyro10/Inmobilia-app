@@ -1,11 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FC } from "react";
+import { FC, useContext } from "react";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import logo from "../../public/Logo-Ana-palacios.png";
+import { AuthContext } from "@/context";
+import { useRouter } from "next/router";
 
 export const Footer: FC = () => {
+  const router = useRouter();
+  const { user, logoutUser } = useContext(AuthContext);
+  const handleLogout = () => {
+    logoutUser();
+    router.push('/');
+  }
   return (
     <footer className="bg-dark-blue mt-auto py-14 flex-col">
       <div className="flex justify-evenly text-white items-center text-sm md:text-base">
@@ -25,9 +33,21 @@ export const Footer: FC = () => {
           <Link href="/about" className="hover:text-yellow transition ease-in">
             Quiénes Somos
           </Link>
-          <Link href="/auth/login" className="hover:text-yellow transition ease-in">
-            Iniciar Sesión
-          </Link>
+          {!user ? (
+            <Link
+              href="/auth/login"
+              className="hover:text-yellow transition ease-in"
+            >
+              Iniciar Sesión
+            </Link>
+          ) : (
+            <button
+              onClick={handleLogout}
+              className="hover:text-yellow text-left transition ease-in"
+            >
+              Cerrar Sesión
+            </button>
+          )}
         </div>
         <div className="flex flex-col gap-5 text-xl">
           <a

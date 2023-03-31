@@ -25,7 +25,7 @@ const LoginPage: NextPage = () => {
       return;
     };
     
-    replace('/')
+    replace('/propiedades')
   };
 
   return (

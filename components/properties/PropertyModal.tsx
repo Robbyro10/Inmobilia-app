@@ -106,7 +106,7 @@ export const PropertyModal: FC<Props> = ({
         <h1 className="text-2xl text-yellow text-center my-5">
           {type === "add" ? "Agregar Propiedad" : "Editar Propiedad"}
         </h1>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} className="text-xs md:text-base">
           <div className="flex flex-col gap-4">
             <div className="grid grid-cols-2 gap-2">
               <div className="flex flex-col gap-1">
