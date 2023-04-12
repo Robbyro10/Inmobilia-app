@@ -19,12 +19,12 @@ export const PropertyBar: FC<Props> = ({ property }) => {
       </div>
       <div className="text-center hidden md:block">
         <h2 className="text-yellow text-2xl">Construcción</h2>
-        <p>{property.size} mts^2</p>
+        <p>{property.size} mts</p>
       </div>
       {(property.terrain && property.terrain !== 0) ? (
         <div className="text-center hidden md:block">
           <h2 className="text-yellow text-2xl">Terreno</h2>
-          <p>{property.terrain} mts^2</p>
+          <p>{property.terrain} mts</p>
         </div>
       ) : <></>}
       <div className="flex gap-8 items-center text-white text-center text-xl">

@@ -8,7 +8,8 @@ import React, { FC, useContext } from "react";
 import { FaBath, FaCarSide, FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { IoIosBed } from "react-icons/io";
-import { RiArrowRightSLine } from "react-icons/ri"
+import { BsShareFill } from "react-icons/bs"
+import { RiArrowRightSLine } from "react-icons/ri";
 
 interface Props {
   property: IProperty;
@@ -35,6 +36,19 @@ export const PropertyCard: FC<Props> = ({ property }) => {
     });
   };
 
+  const handleCopy = () => {
+    navigator.clipboard.writeText(process.env.APP_URL + "propiedades/" + property._id);
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      toast: true,
+      title: 'Link copiado al portapapeles',
+      showConfirmButton: false,
+      timer: 2000,
+      backdrop: false,
+    })
+  }
+
   return (
     <div className="bg-dark-blue shadow-md transition ease-out pb-5 relative hover:-translate-y-1 rounded-md">
       <Link href={`/propiedades/${property._id}`}>
@@ -46,17 +60,33 @@ export const PropertyCard: FC<Props> = ({ property }) => {
           priority
           className="object-cover h-64 rounded-t-md"
         />
-        <div className="mx-5 mt-5 mb-8 text-center ">
+        <div className="mx-5 my-5 text-center ">
           <span className="flex gap-1 text-yellow text-2xl capitalize mb-2 justify-center items-center">
-            <h1 className="hover:underline">{property.address}</h1>
+            <h1 className="hover:underline font-semibold">
+              {property.address}
+            </h1>
             <RiArrowRightSLine />
           </span>
-          <p className="text-white text-lg line-clamp-3 h-20">
+          <p className="text-white text-sm line-clamp-3 h-16">
             {property.description}
           </p>
         </div>
+        <div className="flex justify-around text-center">
+          {property.size !== undefined && property.size > 0 && (
+            <h2 className="text-yellow">
+              Construcción: <br />{" "}
+              <span className="text-lg text-white">{property.size} mts</span>
+            </h2>
+          )}
+          {property.terrain !== undefined && property.terrain > 0 && (
+            <h2 className="text-yellow">
+              Terreno: <br />{" "}
+              <span className="text-lg text-white">{property.terrain} mts</span>
+            </h2>
+          )}
+        </div>
         <div className="flex flex-col gap-5 my-5 text-white text-center">
-          <div className="flex justify-evenly items-center   text-xl">
+          <div className="flex justify-evenly items-center text-xl my-3">
             <div>
               <FaBath className="text-yellow" />
               <h2>{property.bath}</h2>
@@ -73,30 +103,33 @@ export const PropertyCard: FC<Props> = ({ property }) => {
 
           <div className="flex justify-around">
             {property.sale !== undefined && property.sale > 0 && (
-              <h2>
+              <h2 className="text-yellow">
                 Venta: <br />{" "}
-                <b className="text-lg">{format(property.sale!)}</b>
+                <p className="text-lg text-white">{format(property.sale!)}</p>
               </h2>
             )}
             {property.rent !== undefined && property.rent > 0 && (
-              <h2>
+              <h2 className="text-yellow">
                 Alquiler: <br />{" "}
-                <b className="text-lg">{format(property.rent!)}</b>
+                <p className="text-lg text-white">{format(property.rent!)}</p>
               </h2>
             )}
           </div>
         </div>
       </Link>
-      {user && (
-        <div className="flex justify-center gap-5 absolute right-2 top-2">
+      <div className="flex flex-col justify-center gap-5 absolute right-2 top-2">
+        {user && (
           <button
             onClick={handleDelete}
-            className="text-white px-3 py-2 border rounded-md transition ease-in hover:bg-error hover:text-white hover:border-error"
+            className="text-white px-3 py-2 border backdrop-blur-sm rounded-md transition ease-in hover:bg-error hover:text-white hover:border-error"
           >
             <FaTrash />
           </button>
-        </div>
-      )}
+        )}
+        <button onClick={handleCopy} className="text-white px-3 py-2 border backdrop-blur-sm rounded-md transition ease-in hover:bg-yellow hover:text-white hover:border-yellow">
+          <BsShareFill />
+        </button>
+      </div>
     </div>
   );
 };

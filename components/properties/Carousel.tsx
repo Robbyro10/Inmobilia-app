@@ -22,7 +22,7 @@ export const Carousel: FC<Props> = ({ images }) => {
 
   return (
     <div className="w-full relative ">
-      <div className="max-w-screen-2xl h-[350px] md:h-[500px] lg:h-[750px] xl:h-[800px] w-full m-auto relative group">
+      <div className="max-w-screen-xl max-h-screen h-[350px] md:h-[500px] lg:h-[750px] xl:h-[800px] w-full m-auto relative group">
         <Image
           width={1280}
           height={1000}
