@@ -96,7 +96,7 @@ export const PropertyModal: FC<Props> = ({
 
   return (
     <div className="fixed inset-0 mt-12 bg-dark-blue bg-opacity-30 backdrop-blur-sm flex justify-center items-center">
-      <div className="bg-blue p-6 rounded-sm w-5/6 lg:w-fit relative">
+      <div className="mt-10 bg-blue p-6 rounded-sm w-5/6 lg:w-fit relative max-h-[calc(100vh-120px)] overflow-y-auto">
         <button
           onClick={onClose}
           className="text-yellow text-right border rounded-md p-1 absolute top-0 right-0 my-5 mx-6 hover:bg-yellow hover:text-blue transition ease-in "
