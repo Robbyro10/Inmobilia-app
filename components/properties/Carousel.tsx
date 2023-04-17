@@ -22,14 +22,10 @@ export const Carousel: FC<Props> = ({ images }) => {
 
   return (
     <div className="w-full relative ">
-      <div className="max-w-screen-xl max-h-screen h-[350px] md:h-[500px] lg:h-[750px] xl:h-[800px] w-full m-auto relative group">
-        <Image
-          width={1280}
-          height={1000}
-          priority
-          src={images[currentIndex]}
-          alt={images[currentIndex]}
-          className="h-full w-full bg-center object-cover"
+      <div className="max-w-screen-xl max-h-screen h-[600px] md:h-[800px] w-full m-auto relative group">
+        <div
+          style={{ backgroundImage: `url(${images[currentIndex]})` }}
+          className="h-full w-full bg-center bg-cover duration-300 bg-no-repeat"
         />
         {/* Left Arrow */}
         <button
