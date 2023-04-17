@@ -14,7 +14,7 @@ export default function Home() {
     >
       <Hero />
 
-          <OfferingCard />
+      <OfferingCard />
       <div className="flex flex-col md:flex-row px-5 max-w-screen-xl justify-center items-center my-5 mx-auto py-5">
         <div className="md:w-1/2 p-2 mx-5 basis-1/2">
           <Image
@@ -30,8 +30,10 @@ export default function Home() {
             Nuestro Catálogo de Propiedades
           </h1>
           <h2 className="text-white mb-5">
-            Disponemos de un catálogo de propiedades variado y exclusivo en un solo lugar. Desde casas hasta terrenos, tenemos una gran variedad de
-            inmuebles para ti. Visita nuestra lista de propiedades y contáctanos para visitas.
+            Disponemos de un catálogo de propiedades variado y exclusivo en un
+            solo lugar. Desde casas hasta terrenos, tenemos una gran variedad de
+            inmuebles para ti. Visita nuestra lista de propiedades y contáctanos
+            para visitas.
           </h2>
           <div className="text-sm">
             <Button text="Ver Propiedades" href="propiedades" />
@@ -82,7 +84,7 @@ export default function Home() {
           Nuestro Equipo
         </h1>
         <hr className="text-yellow w-2/3 mx-auto max-w-screen-lg" />
-      <Team />
+        <Team />
       </div>
 
       <Contact />

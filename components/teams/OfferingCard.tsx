@@ -4,7 +4,7 @@ import logo from "../../public/logoSinfondo.png";
 
 export const OfferingCard = () => {
   return (
-    <div className="flex flex-col items-center justify-center my-10 bg-dark-blue md:w-3/4 w-full max-w-screen-lg mx-auto p-10 ">
+    <div className="flex flex-col items-center justify-center my-20 bg-dark-blue md:w-3/4 w-full max-w-screen-lg mx-auto p-10 ">
         <h1 className="text-3xl text-yellow text-left font-semibold mb-2">
           ¿Qué ofrecemos?
         </h1>

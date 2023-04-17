@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { FC, useState } from "react";
 import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 import { RxDotFilled } from "react-icons/rx";
@@ -22,7 +21,7 @@ export const Carousel: FC<Props> = ({ images }) => {
 
   return (
     <div className="w-full relative ">
-      <div className="max-w-screen-xl max-h-screen h-[600px] md:h-[800px] w-full m-auto relative group">
+      <div className="max-w-screen-xl max-h-[calc(100vh-80px)] h-[600px] md:h-[800px] w-full m-auto relative group">
         <div
           style={{ backgroundImage: `url(${images[currentIndex]})` }}
           className="h-full w-full bg-center bg-cover duration-300 bg-no-repeat"
