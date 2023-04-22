@@ -85,7 +85,7 @@ export const PropertyCard: FC<Props> = ({ property }) => {
             </h2>
           )}
         </div>
-        <div className="flex flex-col gap-5 my-5 text-white text-center">
+        <div className="flex flex-col my-5 text-white text-center">
           <div className="flex justify-evenly items-center text-xl my-3">
             <div>
               <FaBath className="text-yellow" />

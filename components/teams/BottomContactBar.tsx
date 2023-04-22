@@ -1,7 +1,12 @@
+import { AuthContext } from "@/context";
 import Link from "next/link";
-import React from "react";
+import { useContext } from "react";
+
 
 export const BottomContactBar = () => {
+  const {user} = useContext(AuthContext)
+  if (user) return null;
+
   return (
     <div className="bg-dark-blue fixed bottom-0 w-full py-4 flex justify-center items-center z-50 md:hidden">
       <Link
