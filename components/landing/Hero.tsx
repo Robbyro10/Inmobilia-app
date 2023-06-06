@@ -1,5 +1,5 @@
 import Image from "next/image";
-import avila from "../../public/avila.jpg";
+import avila from "../../public/avila3.jpeg";
 import { Button } from "../ui";
 
 export const Hero = () => {
@@ -10,7 +10,7 @@ export const Hero = () => {
         priority
         alt="Big image of cerro avila"
         sizes="100vw"
-        className="contrast-50 brightness-50 h-full object-cover w-full"
+        className="contrast-75 brightness-50 h-full object-cover w-full"
       />
       <div className="flex flex-col gap-5 absolute mx-auto px-1 top-1/2 transform -translate-y-3/4">
         <h1 className="text-4xl font-semibold lg:text-6xl animate__animated animate__fadeInDown">

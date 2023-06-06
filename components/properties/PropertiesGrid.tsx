@@ -6,9 +6,8 @@ interface Props {
     properties: IProperty[]
 }
 
-// const localProperties = properties;
-
 export const PropertiesGrid: FC<Props> = ({ properties }) => {
+
   return (
     <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mb-10'>
         {
